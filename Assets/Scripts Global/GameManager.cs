@@ -6,10 +6,20 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        private string currentMainScene = nameof(Scenes.LoadingScene);
+        public bool IsLoading => currentMainScene == nameof(Scenes.LoadingScene);
+
+
+        private void Awake()
+        {
+            //transition to LobbyScene when we successfully join server lobby
+            ConnectionManager.JoinedServerLobby.AddListener(() => StartCoroutine(TransitionToScene(nameof(Scenes.LobbyScene))));
+            //transition to GameScene when we successfully join a room from LobbyScene
+            ConnectionManager.JoinedRoom.AddListener(() => StartCoroutine(TransitionToScene(nameof(Scenes.GameScene))));
+        }
         private void Start()
         {
-            SceneManager.LoadScene("LoadingScene", LoadSceneMode.Additive); //we start the game with the loading scene
-            ConnectionManager.JoinedServerLobby.AddListener(() => StartCoroutine(LoadLobbyScene())); //when we successfully join a server lobby, we start a coroutine to load a lobby scene
+            SceneManager.LoadScene(currentMainScene, LoadSceneMode.Additive); //start the game with the loading screen
             StartCoroutine(ConnectToServerLobby()); //start trying to connect to a server lobby
         }
         private IEnumerator ConnectToServerLobby()
@@ -20,15 +30,43 @@ namespace Managers
                 yield return null;
             }
         }
-        private IEnumerator LoadLobbyScene()
+        private IEnumerator TransitionToScene(string targetSceneName)
         {
-            //TODO yield return SceneManager.UnloadSceneAsync("LoadingScene");
-            AsyncOperation unloadingTask = SceneManager.UnloadSceneAsync("LoadingScene");
-            while(!unloadingTask.isDone)
+            if(targetSceneName == nameof(Scenes.LoadingScene))
             {
-                yield return new WaitForSeconds(1); //if task isn't done, we wait for 1 second and check it again
+                Debug.LogError("Don't change to LoadingScene! It's reserved for transitions between active scenes.");
+                yield break;
             }
-            SceneManager.LoadSceneAsync("LobbyScene", LoadSceneMode.Additive); //once loading scene is unloaded, we start loading the lobby scene
+            
+            float oldTimeScale = Time.timeScale;
+            Time.timeScale = 0; //pause the game entirely
+
+            if(!IsLoading)
+                SceneManager.LoadScene(nameof(Scenes.LoadingScene), LoadSceneMode.Additive); //load loading screen
+
+
+            AsyncOperation loadingTask = SceneManager.LoadSceneAsync(targetSceneName, LoadSceneMode.Additive);
+            while(!loadingTask.isDone) //wait until the target scene is loaded
+                yield return null;
+
+            if (!IsLoading)
+            {
+                AsyncOperation unloadingTask = SceneManager.UnloadSceneAsync(currentMainScene);
+                while(!unloadingTask.isDone) //wait until the previous scene is unloaded
+                    yield return null;
+            }
+            
+            currentMainScene = targetSceneName;
+            SceneManager.UnloadSceneAsync(nameof(Scenes.LoadingScene)); //unload loading scene when all is finished
+
+            Time.timeScale = oldTimeScale; //return to the previous timeScale to resume the game
+        }
+
+        private enum Scenes
+        {
+            LoadingScene,
+            LobbyScene,
+            GameScene,
         }
     }
 }

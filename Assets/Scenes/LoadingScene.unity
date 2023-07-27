@@ -159,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1175.6, y: 561.2}
+  m_SizeDelta: {x: 881.2, y: 390.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696550159
 MonoBehaviour:
@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScene UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2944887758207721600, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6091056563232711353, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
       propertyPath: _UIName
       value: Loading Scene UI
@@ -248,18 +252,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
-      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}

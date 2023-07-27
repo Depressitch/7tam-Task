@@ -924,7 +924,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 894246901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3536180182089645983, guid: fb984d5ef6a96d54099422550c27d224, type: 3}
+        m_TargetAssemblyTypeName: Managers.ConnectionManager, Assembly-CSharp
+        m_MethodName: JoinRoom
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1967311476}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &894246901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1140,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2259941215818396074, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
       propertyPath: m_Name
       value: LobbyScene UI
@@ -1231,6 +1247,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
   m_PrefabInstance: {fileID: 1338443046}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1338443048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2259941215818396074, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
+  m_PrefabInstance: {fileID: 1338443046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1338443049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338443048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e60b26ca945ef54baf203aaae24c476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720182213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851525555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3536180182089645983, guid: fb984d5ef6a96d54099422550c27d224, type: 3}
+        m_TargetAssemblyTypeName: Managers.ConnectionManager, Assembly-CSharp
+        m_MethodName: CreateRoom
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1967311476}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1851525555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,14 +1737,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 4
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 1
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 4
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0

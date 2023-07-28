@@ -1140,10 +1140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2259941215818396074, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
       propertyPath: m_Name
       value: LobbyScene UI
@@ -1247,23 +1243,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6849381253198569928, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
   m_PrefabInstance: {fileID: 1338443046}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1338443048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2259941215818396074, guid: c7429c4fe130be44ca7a6efa9b72ed22, type: 3}
-  m_PrefabInstance: {fileID: 1338443046}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1338443049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338443048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e60b26ca945ef54baf203aaae24c476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1720182213
 GameObject:
   m_ObjectHideFlags: 0

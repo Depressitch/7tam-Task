@@ -6,6 +6,6 @@ public class UILocalManager : MonoBehaviour
 {
     void Awake()
     {
-        UIManager.AddToUI(transform);
+        //UIManager.AddToUI(transform);
     }
 }
